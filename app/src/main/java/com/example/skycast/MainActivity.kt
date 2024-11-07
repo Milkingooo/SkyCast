@@ -116,10 +116,6 @@ class MainActivity : AppCompatActivity(){
                 val currentWeather = weatherApi.getCurrentWeather(city, "2d845be74061ca6a12c39e464b21ef58")
                 val forecast = weatherApi.getForecast(city, "2d845be74061ca6a12c39e464b21ef58")
 
-//                Glide.with(this@MainActivity)
-//                    .load("https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png")
-//                    .into(findViewById(R.id.iconTempImage))
-
                 withContext(Dispatchers.Main) {
                     findViewById<TextView>(R.id.tempTView).text = "${currentWeather.main.temp.toInt()} °C"
                     findViewById<TextView>(R.id.weatherTView).text = currentWeather.weather[0].description
